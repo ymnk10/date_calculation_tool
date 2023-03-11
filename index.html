@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日付計算ツール</title>
+</head>
+
+<body>
+    <a href="index_input.html">日付を自分で入力</a>
+    <br>
+</body>
+
+</html>
+
+<script>
+    var hiduke = new Date();
+    var two_days_later = new Date();
+    var three_days_later = new Date();
+    var four_days_later = new Date();
+    var five_days_later = new Date();
+    var six_days_later = new Date();
+    var eleven_days_later = new Date();
+    var twelve_days_later = new Date();
+    var one_month_and_one_day_later = new Date();
+    var one_month_and_two_days_later = new Date();
+    // document.getElementById("setDate").onchange = function () {
+    //     var date = document.getElementById("setDate").value;
+    //     console.log(date);
+    //     var two_days_later_from_now = new Date();
+    //     two_days_later_from_now.setTime(date + 2 * 24 * 60 * 60 * 1000);
+    //     console.log(two_days_later_from_now);
+    //     document.write(dateFormat(two_days_later_from_now));
+    // };
+
+    two_days_later.setTime(hiduke.getTime() + 2 * 24 * 60 * 60 * 1000);
+    three_days_later.setTime(hiduke.getTime() + 3 * 24 * 60 * 60 * 1000);
+    four_days_later.setTime(hiduke.getTime() + 4 * 24 * 60 * 60 * 1000);
+    five_days_later.setTime(hiduke.getTime() + 5 * 24 * 60 * 60 * 1000);
+    six_days_later.setTime(hiduke.getTime() + 6 * 24 * 60 * 60 * 1000);
+    eleven_days_later.setTime(hiduke.getTime() + 11 * 24 * 60 * 60 * 1000);
+    twelve_days_later.setTime(hiduke.getTime() + 12 * 24 * 60 * 60 * 1000);
+
+    one_month_and_one_day_later.setMonth(one_month_and_one_day_later.getMonth() + 1);
+    one_month_and_one_day_later.setDate(one_month_and_one_day_later.getDate() + 1);
+    one_month_and_two_days_later.setMonth(one_month_and_two_days_later.getMonth() + 1);
+    one_month_and_two_days_later.setDate(one_month_and_two_days_later.getDate() + 2);
+
+    document.write("<ul>" + "<span>" + "50%" + "</span>" + "<div>" + dateFormat(hiduke) + "</div>" + "<span>" + "20%" + "</span>" + "</ul>" + "<br>");
+    document.write("<ul>" + "<div>" + dateFormat(two_days_later) + "</div>" + "<span>" + "-1" + "</span>" + "<div>" + dateFormat(three_days_later) + "</div>" + "</ul>" + "<br>");
+    document.write("<ul>" + "<div>" + dateFormat(three_days_later) + "</div>" + "<span>" + "-2" + "</span>" + "<div>" + dateFormat(four_days_later) + "</div>" + "</ul>" + "<br>");
+    document.write("<ul>" + "<div>" + dateFormat(five_days_later) + "</div>" + "<span>" + "-4" + "</span>" + "<div>" + dateFormat(six_days_later) + "</div>" + "</ul>" + "<br>");
+    document.write("<ul>" + "<div>" + dateFormat(eleven_days_later) + "</div>" + "<span>" + "-10" + "</span>" + "<div>" + dateFormat(twelve_days_later) + "</div>" + "</ul>" + "<br>");
+    document.write("<ul>" + "<div>" + dateFormat(one_month_and_one_day_later) + "</div>" + "<span>" + "-1M" + "</span>" + "<div>" + dateFormat(one_month_and_two_days_later) + "</div>" + "</ul>" + "<br>");
+
+    function dateFormat(date) {
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var week = date.getDay();
+        var day = date.getDate();
+
+        return year + "年" + month + "月" + day + "日 ";
+        // var yobi = new Array("日", "月", "火", "水", "木", "金", "土");
+        // + yobi[week] + "曜日"
+    }
+</script>
+
+<style>
+    body {
+        text-align: center;
+    }
+
+    ul {
+        font-size: 20px;
+
+    }
+
+    div {
+        font-size: 30px;
+        display: inline-block;
+        padding: 30px;
+        border: 2px solid #000000;
+        border-radius: 10px;
+    }
+
+    span {
+        font-size: 30px;
+        display: inline-block;
+        padding: 50px;
+    }
+</style>
