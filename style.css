@@ -1,0 +1,22 @@
+body {
+    text-align: center;
+}
+
+ul {
+    font-size: 15px;
+
+}
+
+div {
+    font-size: 15px;
+    display: inline-block;
+    padding: 5px;
+    border: 2px solid #000000;
+    border-radius: 10px;
+}
+
+span {
+    font-size: 15px;
+    display: inline-block;
+    padding: 20px;
+}

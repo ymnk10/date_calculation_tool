@@ -9,9 +9,107 @@
 </head>
 
 <body>
-    <a href="index.html">日付を自分で入力</a>
+    <a href="index.html">日付を自動で入力</a>
     <br>
     <input type="date" id="setDate">
+    <br>
+    <input type="button" value="決定" id="checkButton">
+    <p id="output">現在の日付</p>
 </body>
 
 </html>
+<script>
+    const element = document.getElementById('setDate');
+    console.log(element.value);
+    let output = document.getElementById('output');
+    function buttonClick() {
+        output.innerText = setDate.value;
+        var userDate = new Date(setDate.value.substring(0, 4), setDate.value.substring(5, 7) - 1, setDate.value.substring(8, 10));
+        console.log(setDate.value.substring(5, 7))
+        console.log(userDate)
+
+
+
+        var two_days_later = new Date();
+        var three_days_later = new Date();
+        var four_days_later = new Date();
+        var five_days_later = new Date();
+        var six_days_later = new Date();
+        var eleven_days_later = new Date();
+        var twelve_days_later = new Date();
+        var one_month_and_one_day_later = new Date();
+        var one_month_and_two_days_later = new Date();
+
+
+
+        two_days_later.setTime(userDate.getTime() + 2 * 24 * 60 * 60 * 1000);
+        three_days_later.setTime(userDate.getTime() + 3 * 24 * 60 * 60 * 1000);
+        four_days_later.setTime(userDate.getTime() + 4 * 24 * 60 * 60 * 1000);
+        five_days_later.setTime(userDate.getTime() + 5 * 24 * 60 * 60 * 1000);
+        six_days_later.setTime(userDate.getTime() + 6 * 24 * 60 * 60 * 1000);
+        eleven_days_later.setTime(userDate.getTime() + 11 * 24 * 60 * 60 * 1000);
+        twelve_days_later.setTime(userDate.getTime() + 12 * 24 * 60 * 60 * 1000);
+
+
+
+        one_month_and_one_day_later.setTime(userDate.getTime() + 1 * 24 * 60 * 60 * 1000);
+        one_month_and_one_day_later.setMonth(one_month_and_one_day_later.getMonth() + 1);
+        one_month_and_two_days_later.setTime(userDate.getTime() + 2 * 24 * 60 * 60 * 1000);
+        one_month_and_two_days_later.setMonth(one_month_and_two_days_later.getMonth() + 1);
+
+        document.write("<html><head><link rel='stylesheet' href='style.css'></head>");
+
+        document.write("<ul>" + "<span>" + "50%" + "</span>" + "<div>" + dateFormat(userDate) + "</div>" + "<span>" + "20%" + "</span>" + "</ul>" + "<br>");
+        document.write("<ul>" + "<div>" + dateFormat(two_days_later) + "</div>" + "<span>" + "-1" + "</span>" + "<div>" + dateFormat(three_days_later) + "</div>" + "</ul>" + "<br>");
+        document.write("<ul>" + "<div>" + dateFormat(three_days_later) + "</div>" + "<span>" + "-2" + "</span>" + "<div>" + dateFormat(four_days_later) + "</div>" + "</ul>" + "<br>");
+        document.write("<ul>" + "<div>" + dateFormat(five_days_later) + "</div>" + "<span>" + "-4" + "</span>" + "<div>" + dateFormat(six_days_later) + "</div>" + "</ul>" + "<br>");
+        document.write("<ul>" + "<div>" + dateFormat(eleven_days_later) + "</div>" + "<span>" + "-10" + "</span>" + "<div>" + dateFormat(twelve_days_later) + "</div>" + "</ul>" + "<br>");
+        document.write("<ul>" + "<div>" + dateFormat(one_month_and_one_day_later) + "</div>" + "<span>" + "-1M" + "</span>" + "<div>" + dateFormat(one_month_and_two_days_later) + "</div>" + "</ul>" + "<br>");
+        document.write('<input type="button" value="入力しなおす" onclick="window.location.reload();" />')
+
+        function dateFormat(date) {
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var week = date.getDay();
+            var day = date.getDate();
+
+            return year + "/" + month + "/" + day;
+            // var yobi = new Array("日", "月", "火", "水", "木", "金", "土");
+            // + yobi[week] + "曜日"
+        }
+    }
+
+    let checkButton = document.getElementById('checkButton');
+    checkButton.addEventListener('click', buttonClick);
+
+
+
+
+
+
+</script>
+
+<style>
+    body {
+        text-align: center;
+    }
+
+    ul {
+        font-size: 15px;
+
+    }
+
+    div {
+        font-size: 15px;
+        display: inline-block;
+        padding: 5px;
+        border: 2px solid #000000;
+        border-radius: 10px;
+    }
+
+    span {
+        font-size: 15px;
+        display: inline-block;
+        padding: 20px;
+    }
+</style>
