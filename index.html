@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width">
     <title>日付計算ツール</title>
 </head>
 
@@ -61,7 +62,7 @@
         var week = date.getDay();
         var day = date.getDate();
 
-        return year + "年" + month + "月" + day + "日 ";
+        return year + "/" + month + "/" + day;
         // var yobi = new Array("日", "月", "火", "水", "木", "金", "土");
         // + yobi[week] + "曜日"
     }
@@ -73,21 +74,21 @@
     }
 
     ul {
-        font-size: 20px;
+        font-size: 15px;
 
     }
 
     div {
-        font-size: 30px;
+        font-size: 15px;
         display: inline-block;
-        padding: 30px;
+        padding: 5px;
         border: 2px solid #000000;
         border-radius: 10px;
     }
 
     span {
-        font-size: 30px;
+        font-size: 15px;
         display: inline-block;
-        padding: 50px;
+        padding: 20px;
     }
 </style>
